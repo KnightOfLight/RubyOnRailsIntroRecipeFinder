@@ -1,0 +1,13 @@
+<h1>Recipes#index</h1>
+
+<table>
+<%@recipes.each do |item|%>
+	<tr>
+		<td><%= link_to(image_tag(item["image_url"] , size: "100x100"), item["image_url"]) %></td>
+		<td><%= link_to(sanitize(item["title"]),item["source_url"]) %></td>
+		<td><%=  item["social_rank"].round %></td>
+	</tr>
+<% end %>
+</table>
+
+<p>Find me in app/views/recipes/index.html.erb</p>
